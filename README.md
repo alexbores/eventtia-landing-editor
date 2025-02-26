@@ -23,4 +23,6 @@ This project is a landing page template editor built using [Unlayer](https://unl
 
 ## Installation and Setup
 
-add credentials in form-tools.js at line 86 and in api-client.js at line 23
+- Needs to be run in localhost with php support.
+
+- add credentials in form-tools.js at line 86 and in api-client.js at line 23.
