@@ -1,0 +1,336 @@
+{
+    "counters": {
+        "u_row": 1,
+        "u_column": 1,
+        "u_content_html": 1,
+        "u_content_text": 1,
+        "u_content_image": 1,
+        "u_content_heading": 1,
+        "u_content_custom_speakers": 1,
+        "u_content_custom_form_modal": 1,
+        "u_content_custom_form_cta_tool": 2
+    },
+    "body": {
+        "id": "uDFs10m28a",
+        "rows": [
+            {
+                "id": "_Uu8iIzIuA",
+                "cells": [
+                    1
+                ],
+                "columns": [
+                    {
+                        "id": "Mt_QH-M0ds",
+                        "contents": [
+                            {
+                                "id": "pb22Ij_k1X",
+                                "type": "custom",
+                                "slug": "form_modal",
+                                "values": {
+                                    "displayCondition": null,
+                                    "_styleGuide": null,
+                                    "containerPadding": "10px",
+                                    "anchor": "",
+                                    "_meta": {
+                                        "htmlID": "u_content_custom_form_modal_1",
+                                        "htmlClassNames": "u_content_custom_form_modal",
+                                        "description": ""
+                                    },
+                                    "selectable": true,
+                                    "draggable": false,
+                                    "duplicatable": false,
+                                    "deletable": false,
+                                    "hideable": false
+                                }
+                            },
+                            {
+                                "id": "wLB5oPRdr2",
+                                "type": "image",
+                                "values": {
+                                    "containerPadding": "10px",
+                                    "anchor": "",
+                                    "src": {
+                                        "url": "https:\/\/assets.unlayer.com\/projects\/266987\/1740504911213-528018.jpg",
+                                        "width": 433,
+                                        "height": 244,
+                                        "author": {
+                                            "name": "Matheus Bertelli",
+                                            "url": "https:\/\/www.pexels.com\/@bertellifotografia"
+                                        },
+                                        "id": 28017660,
+                                        "platform": {
+                                            "name": "Pexels",
+                                            "url": "https:\/\/pexels.com"
+                                        },
+                                        "preview": {
+                                            "width": 233,
+                                            "height": 350,
+                                            "url": "https:\/\/images.pexels.com\/photos\/19012046\/pexels-photo-19012046.jpeg?auto=compress&cs=tinysrgb&h=350"
+                                        },
+                                        "contentType": "image\/jpg",
+                                        "size": 128962,
+                                        "dynamic": true
+                                    },
+                                    "textAlign": "center",
+                                    "altText": "",
+                                    "action": {
+                                        "name": "web",
+                                        "values": {
+                                            "href": "",
+                                            "target": "_blank"
+                                        }
+                                    },
+                                    "hideDesktop": false,
+                                    "displayCondition": null,
+                                    "_styleGuide": null,
+                                    "_meta": {
+                                        "htmlID": "u_content_image_1",
+                                        "description": "",
+                                        "htmlClassNames": "u_content_image"
+                                    },
+                                    "selectable": true,
+                                    "draggable": true,
+                                    "duplicatable": true,
+                                    "deletable": true,
+                                    "hideable": true,
+                                    "locked": false,
+                                    "pending": false
+                                }
+                            },
+                            {
+                                "id": "qxvUS6F7-G",
+                                "type": "heading",
+                                "values": {
+                                    "containerPadding": "10px",
+                                    "anchor": "",
+                                    "headingType": "h1",
+                                    "fontSize": "22px",
+                                    "textAlign": "left",
+                                    "lineHeight": "140%",
+                                    "linkStyle": {
+                                        "inherit": true,
+                                        "linkColor": "#0000ee",
+                                        "linkHoverColor": "#0000ee",
+                                        "linkUnderline": true,
+                                        "linkHoverUnderline": true
+                                    },
+                                    "hideDesktop": false,
+                                    "displayCondition": null,
+                                    "_styleGuide": null,
+                                    "_meta": {
+                                        "htmlID": "u_content_heading_1",
+                                        "description": "",
+                                        "htmlClassNames": "u_content_heading"
+                                    },
+                                    "selectable": true,
+                                    "draggable": false,
+                                    "duplicatable": false,
+                                    "deletable": false,
+                                    "hideable": false,
+                                    "locked": false,
+                                    "text": "<span>Unite 2024 M\u00e9xico<\/span>",
+                                    "_languages": []
+                                }
+                            },
+                            {
+                                "id": "nfCHTFQlKX",
+                                "type": "text",
+                                "values": {
+                                    "containerPadding": "10px",
+                                    "anchor": "",
+                                    "fontSize": "14px",
+                                    "textAlign": "left",
+                                    "lineHeight": "140%",
+                                    "linkStyle": {
+                                        "inherit": true,
+                                        "linkColor": "#0000ee",
+                                        "linkHoverColor": "#0000ee",
+                                        "linkUnderline": true,
+                                        "linkHoverUnderline": true
+                                    },
+                                    "hideDesktop": false,
+                                    "displayCondition": null,
+                                    "_styleGuide": null,
+                                    "_meta": {
+                                        "htmlID": "u_content_text_1",
+                                        "htmlClassNames": "u_content_text",
+                                        "description": ""
+                                    },
+                                    "selectable": true,
+                                    "draggable": true,
+                                    "duplicatable": true,
+                                    "deletable": true,
+                                    "hideable": true,
+                                    "locked": false,
+                                    "text": "<p style=\"line-height: 140%;\">Join us for Unite 2024 M\u00e9xico, the premier summit for Unity enthusiasts, developers, and industry leaders. This exciting event offers an exclusive preview of Unity\u2019s latest innovations and technologies.<\/p>",
+                                    "_languages": []
+                                }
+                            },
+                            {
+                                "id": "xgVk7pW9tz",
+                                "type": "custom",
+                                "slug": "form_cta_tool",
+                                "values": {
+                                    "displayCondition": null,
+                                    "_styleGuide": null,
+                                    "containerPadding": "10px",
+                                    "anchor": "",
+                                    "_meta": {
+                                        "htmlID": "u_content_custom_form_cta_tool_1",
+                                        "htmlClassNames": "u_content_custom_form_cta_tool",
+                                        "description": ""
+                                    },
+                                    "selectable": true,
+                                    "draggable": false,
+                                    "duplicatable": false,
+                                    "deletable": false,
+                                    "hideable": true
+                                }
+                            },
+                            {
+                                "id": "bBj1yQ-unO",
+                                "type": "custom",
+                                "slug": "speakers",
+                                "values": {
+                                    "displayCondition": null,
+                                    "_styleGuide": null,
+                                    "containerPadding": "10px",
+                                    "anchor": "",
+                                    "_meta": {
+                                        "htmlID": "u_content_custom_speakers_1",
+                                        "htmlClassNames": "u_content_custom_speakers",
+                                        "description": ""
+                                    },
+                                    "selectable": true,
+                                    "draggable": false,
+                                    "duplicatable": false,
+                                    "deletable": false,
+                                    "hideable": true
+                                }
+                            },
+                            {
+                                "id": "scHnohLJo_",
+                                "type": "custom",
+                                "slug": "form_cta_tool",
+                                "values": {
+                                    "displayCondition": null,
+                                    "_styleGuide": null,
+                                    "containerPadding": "10px",
+                                    "anchor": "",
+                                    "_meta": {
+                                        "htmlID": "u_content_custom_form_cta_tool_2",
+                                        "htmlClassNames": "u_content_custom_form_cta_tool"
+                                    },
+                                    "selectable": true,
+                                    "draggable": true,
+                                    "duplicatable": true,
+                                    "deletable": true,
+                                    "hideable": true
+                                }
+                            }
+                        ],
+                        "values": {
+                            "_meta": {
+                                "htmlID": "u_column_1",
+                                "description": "",
+                                "htmlClassNames": "u_column"
+                            },
+                            "border": [],
+                            "padding": "0px",
+                            "deletable": true,
+                            "backgroundColor": ""
+                        }
+                    }
+                ],
+                "values": {
+                    "displayCondition": null,
+                    "columns": false,
+                    "_styleGuide": null,
+                    "backgroundColor": "",
+                    "columnsBackgroundColor": "",
+                    "backgroundImage": {
+                        "url": "",
+                        "fullWidth": true,
+                        "repeat": "no-repeat",
+                        "size": "custom",
+                        "position": "center"
+                    },
+                    "padding": "0px",
+                    "anchor": "",
+                    "hideDesktop": false,
+                    "_meta": {
+                        "htmlID": "u_row_1",
+                        "description": "",
+                        "htmlClassNames": "u_row"
+                    },
+                    "selectable": true,
+                    "draggable": true,
+                    "duplicatable": true,
+                    "deletable": true,
+                    "hideable": true,
+                    "locked": false
+                }
+            }
+        ],
+        "headers": [],
+        "footers": [],
+        "values": {
+            "_styleGuide": null,
+            "popupPosition": "center",
+            "popupWidth": "600px",
+            "popupHeight": "auto",
+            "borderRadius": "10px",
+            "contentAlign": "center",
+            "contentVerticalAlign": "center",
+            "contentWidth": "500px",
+            "fontFamily": {
+                "label": "Arial",
+                "value": "arial,helvetica,sans-serif"
+            },
+            "textColor": "#000000",
+            "popupBackgroundColor": "#FFFFFF",
+            "popupBackgroundImage": {
+                "url": "",
+                "fullWidth": true,
+                "repeat": "no-repeat",
+                "size": "cover",
+                "position": "center"
+            },
+            "popupOverlay_backgroundColor": "rgba(0, 0, 0, 0.1)",
+            "popupCloseButton_position": "top-right",
+            "popupCloseButton_backgroundColor": "#DDDDDD",
+            "popupCloseButton_iconColor": "#000000",
+            "popupCloseButton_borderRadius": "0px",
+            "popupCloseButton_margin": "0px",
+            "popupCloseButton_action": {
+                "name": "close_popup",
+                "attrs": {
+                    "onClick": "document.querySelector('.u-popup-container').style.display = 'none';"
+                }
+            },
+            "language": [],
+            "backgroundColor": "#F9F9F9",
+            "preheaderText": "",
+            "linkStyle": {
+                "body": true,
+                "linkColor": "#0000ee",
+                "linkHoverColor": "#0000ee",
+                "linkUnderline": true,
+                "linkHoverUnderline": true
+            },
+            "backgroundImage": {
+                "url": "",
+                "fullWidth": true,
+                "repeat": "no-repeat",
+                "size": "custom",
+                "position": "center"
+            },
+            "_meta": {
+                "htmlID": "u_body",
+                "description": "",
+                "htmlClassNames": "u_body"
+            }
+        }
+    },
+    "schemaVersion": 20
+}
