@@ -21,8 +21,8 @@ class ApiClient {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          email: 'alejandro.bores@eventtia.com',
-          password: '6o$4g1fM2d[Y'
+          email: '',
+          password: ''
         })
       });
 
