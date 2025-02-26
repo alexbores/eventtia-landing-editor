@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Luxury Event Template Editor</title>
+  <title>Event Template Editor</title>
   <!-- Load Unlayer's embed script -->
   <script src="https://editor.unlayer.com/embed.js"></script>
   <script src="./constants.js"></script>
