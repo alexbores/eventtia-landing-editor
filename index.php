@@ -54,7 +54,9 @@
         },
         displayMode: 'web', 
         designMode: 'edit',
-        customJS: [
+        customJS: [ 
+           //limited to 1 because of the current plan, 
+           //links must be by domain because are run in an iframe
           'http://localhost/speakers-tool.js',
           'http://localhost/form-cta-tool.js',
           'http://localhost/form-tool.js',
