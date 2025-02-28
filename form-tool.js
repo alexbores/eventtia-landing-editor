@@ -34,136 +34,143 @@ unlayer.registerTool({
                 <p aria-label="close">X</p>
              </div>
              <form class="registration-form" id="registrationForm">
-            <div class="form-group">
-              <label for="attendeeTypeId">Attendee Type*</label>
-              <select id="attendeeTypeId" name="attendeeTypeId" required>
-                <option value="">Select an attendee type</option>
-                ${options}
-              </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="firstName">First Name*</label>
-              <input type="text" id="firstName" name="firstName" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="lastName">Last Name*</label>
-              <input type="text" id="lastName" name="lastName" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email*</label>
-              <input type="email" id="email" name="email" required>
-            </div>
+               <div class="form-group">
+                 <label for="attendeeTypeId">Attendee Type*</label>
+                 <select id="attendeeTypeId" name="attendeeTypeId" required>
+                   <option value="">Select an attendee type</option>
+                   ${options}
+                 </select>
+               </div>
+               
+               <div class="form-group">
+                 <label for="firstName">First Name*</label>
+                 <input type="text" id="firstName" name="firstName" required>
+               </div>
+               
+               <div class="form-group">
+                 <label for="lastName">Last Name*</label>
+                 <input type="text" id="lastName" name="lastName" required>
+               </div>
+               
+               <div class="form-group">
+                 <label for="email">Email*</label>
+                 <input type="email" id="email" name="email" required>
+               </div>
 
-            <button type="submit" class="button button-1">
-              <span>Register Now</span>
-            </button>
+               <button type="submit" class="button button-1">
+                 <span>Register Now</span>
+               </button>
              </form>
+             <div class="loader">
+               <p text-status="1">Loading...</p>
+               <p text-status="2">Register successful</p>
+               <p text-status="3">An Error has occured <span error></span></p>
+             </div>
            </div>
           </div>
 
           <script>
             class ApiClient {
-  constructor() {
-    this.baseUrl = 'https://connect.eventtia.com/api/v3';
-    this.token = null;
-    this.tokenExpiry = null;
-  }
+             constructor() {
+               this.baseUrl = 'https://connect.eventtia.com/api/v3';
+               this.token = null;
+               this.tokenExpiry = null;
+             }
 
-  async getToken() {
-    try {
-      if (this.isTokenValid()) {
-        console.log('🔑 Using existing token');
-        return this.token;
-      }
+             async getToken() {
+               try {
+                 if (this.isTokenValid()) {
+                   console.log('🔑 Using existing token');
+                   return this.token;
+                 }
 
-      console.log('🔑 Requesting new token...');
-      const response = await fetch(this.baseUrl + '/auth', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          email: '',
-          password: ''
-        })
-      });
+                 console.log('🔑 Requesting new token...');
+                 const response = await fetch(this.baseUrl + '/auth', {
+                   method: 'POST',
+                   headers: {
+                     'Content-Type': 'application/json',
+                     'Accept': 'application/json'
+                   },
+                   body: JSON.stringify({
+                     email: '',
+                     password: ''
+                   })
+                 });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(errorText);
-      }
+                 if (!response.ok) {
+                   const errorText = await response.text();
+                   throw new Error(errorText);
+                 }
 
-      const data = await response.json();
-      if (!data.auth_token) {
-        throw new Error('Invalid token response');
-      }
+                 const data = await response.json();
+                 if (!data.auth_token) {
+                   throw new Error('Invalid token response');
+                 }
 
-      this.token = data.auth_token;
-      this.tokenExpiry = new Date(Date.now() + 29 * 24 * 60 * 60 * 1000);
-      console.log('✅ New token obtained');
-      
-      return this.token;
-    } catch (error) {
-      console.error('❌ Error obtaining token:', error);
-      throw error;
-    }
-  }
+                 this.token = data.auth_token;
+                 this.tokenExpiry = new Date(Date.now() + 29 * 24 * 60 * 60 * 1000);
+                 console.log('✅ New token obtained');
+                 
+                 return this.token;
+               } catch (error) {
+                 console.error('❌ Error obtaining token:', error);
+                 throw error;
+               }
+             }
 
-  isTokenValid() {
-    return this.token && this.tokenExpiry && new Date() < this.tokenExpiry;
-  }
+             isTokenValid() {
+               return this.token && this.tokenExpiry && new Date() < this.tokenExpiry;
+             }
 
-  async request(endpoint, options = {}) {
-    try {
-      const token = await this.getToken();
-      const url = this.baseUrl + endpoint;
-      
-      console.log('📡 Making API request to:', url);
-      
-      const defaultOptions = {
-        headers: {
-          'Authorization': \`Bearer \${token}\`,
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
-      };
+             async request(endpoint, options = {}) {
+               try {
+                 const token = await this.getToken();
+                 const url = this.baseUrl + endpoint;
+                 
+                 console.log('📡 Making API request to:', url);
+                 
+                 const defaultOptions = {
+                   headers: {
+                     'Authorization': \`Bearer \${token}\`,
+                     'Content-Type': 'application/json',
+                     'Accept': 'application/json'
+                   }
+                 };
 
-      const finalOptions = {
-        ...defaultOptions,
-        ...options,
-        headers: {
-          ...defaultOptions.headers,
-          ...(options.headers || {})
-        }
-      };
+                 const finalOptions = {
+                   ...defaultOptions,
+                   ...options,
+                   headers: {
+                     ...defaultOptions.headers,
+                     ...(options.headers || {})
+                   }
+                 };
 
-      const response = await fetch(url, finalOptions);
-      
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(errorText);
-      }
+                 const response = await fetch(url, finalOptions);
+                 
+                 if (!response.ok) {
+                   const errorText = await response.text();
+                   throw new Error(errorText);
+                 }
 
-      const data = await response.json();
-      console.log('✅ Request successful');
-      return data;
-    } catch (error) {
-      console.error('❌ API request error:', error);
-      throw error;
-    }
-  }
-}
+                 const data = await response.json();
+                 console.log('✅ Request successful');
+                 return data;
+               } catch (error) {
+                 console.error('❌ API request error:', error);
+                 throw error;
+               }
+             }
+            }
 
 
             async function registerAttendee(attendeeData) {
+              let modal = document.querySelector("#form-modal");
+              if (modal) modal.setAttribute("status", "1");
               try {
                 let apiClient = new ApiClient();
                 const response = await apiClient.request(
-                  '${values.data?.registerAttendeeApi}', 
+                  '${values.data?.registerAttendeeApi}',
                   {
                     method: 'POST',
                     body: JSON.stringify({
@@ -178,12 +185,21 @@ unlayer.registerTool({
                     })
                   }
                 );
+                if (modal) modal.setAttribute("status", "2");
+                setTimeout(() => {
+                  if (modal) modal.setAttribute("status", "0");
+                }, 5000);
                 return response.data;
               } catch (error) {
                 console.error('Failed to register attendee:', error);
+                if (modal) modal.setAttribute("status", "3");
+                setTimeout(() => {
+                  if (modal) modal.setAttribute("status", "0");
+                }, 5000);
                 throw error;
               }
             }
+
 
             window.addEventListener('load',()=>{
               
@@ -214,11 +230,8 @@ unlayer.registerTool({
                   telephone: '',
                 };
                 console.log(formData);
-                registerAttendee(formData).then(()=>{
-                   modal.setAttribute('modal-open',false);
-                });
+                registerAttendee(formData);
               });
-              
               
             });
           </script>
@@ -287,7 +300,24 @@ unlayer.registerTool({
     flex-wrap: wrap;
     gap: 20px;
 }       
-
+#form-modal .loader,
+#form-modal[status="1"] form,
+#form-modal[status="2"] form,
+#form-modal[status="3"] form{
+    display: none!important;
+}
+#form-modal .loader p{
+  text-align: center;
+  display: none;
+}
+#form-modal[status="1"] .loader [text-status="1"],
+#form-modal[status="1"] .loader,
+#form-modal[status="2"] .loader [text-status="2"],
+#form-modal[status="2"] .loader,
+#form-modal[status="3"] .loader [text-status="3"],
+#form-modal[status="3"] .loader{
+  display: block!important;
+}          
 
 #form-modal .registration-form .form-group {
   flex: calc(50% - 20px);
