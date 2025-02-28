@@ -181,11 +181,15 @@
         .then(response => response.json())
         .then(data => {
           if(data.success){
-            console.log('File created successfully:', data.filePath);
+            console.log('File created successfully:', data.filename);
             let modal = document.querySelector('#published-page');
             let pageLink = document.querySelector('#published-page a');
             modal.setAttribute('modal-open', 'true');
-            pageLink.setAttribute('href', data.filePath);
+            pageLink.setAttribute('href', '/landing/'+data.fileName+'.html');
+            populateTemplateSelect().then(() => {
+              console.log(data.fileName+'.json');
+              setTemplate(data.fileName+'.json');
+            });
           } else {
             console.error('Error creating file:', data.error);
           }
@@ -197,7 +201,20 @@
 
 
 
-
+    function populateTemplateSelect() {
+      return fetchTemplateFilenames().then(fileNames => {
+        const selectElement = document.getElementById('templateSelect');
+        selectElement.innerHTML = '';
+        if (fileNames && Array.isArray(fileNames)) {
+          fileNames.forEach(fileName => {
+            const option = document.createElement('option');
+            option.value = fileName;
+            option.textContent = fileName;
+            selectElement.appendChild(option);
+          });
+        }
+      });
+    }
     function fetchTemplateFilenames() {
       return fetch('./get-saved-template-names.php', {
         method: 'GET',
@@ -211,19 +228,6 @@
       .catch(err => {
         console.error("Error fetching file names:", err);
         return [];
-      });
-    }
-    function populateTemplateSelect() {
-      fetchTemplateFilenames().then(fileNames => {
-        const selectElement = document.getElementById('templateSelect');
-        if (fileNames && Array.isArray(fileNames)) {
-          fileNames.forEach(fileName => {
-            const option = document.createElement('option');
-            option.value = fileName;
-            option.textContent = fileName;
-            selectElement.appendChild(option);
-          });
-        }
       });
     }
     function setTemplate(fileName){
@@ -240,6 +244,9 @@
         return response.json();
       })
       .then(templateData => {
+        let selectElement = document.getElementById('templateSelect');
+        selectElement.value = fileName;
+
         unlayer.loadDesign(templateData);
       })
       .catch(err => {

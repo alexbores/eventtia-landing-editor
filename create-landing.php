@@ -42,7 +42,7 @@ if ($htmlWriteSuccess && $jsonWriteSuccess) {
     // Return relative paths
     echo json_encode([
         'success' => true,
-        'filePath' => '/landing/' . $randomBase . '.html',
+        'fileName' => $randomBase,
     ]);
 } else {
     echo json_encode(['error' => 'Error writing file(s).']);
